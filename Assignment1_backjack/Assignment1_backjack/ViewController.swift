@@ -11,6 +11,7 @@ import Foundation
 class ViewController: UIViewController {
     
     @IBOutlet weak var dealerCard1: UILabel!
+    
     @IBOutlet weak var dealerCard2: UILabel!
     @IBOutlet weak var dealerCard3: UILabel!
     @IBOutlet weak var dealerCard4: UILabel!
@@ -23,6 +24,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var playerCard4: UILabel!
     @IBOutlet weak var playerCard5: UILabel!
     @IBOutlet weak var playerCard6: UILabel!
+//    dealerCard1.numberOfLines = 2
+//    dealerCard2.numberOfLines = 2
+//    dealerCard3.numberOfLines = 2
+//    dealerCard4.numberOfLines = 2
+//    dealerCard5.numberOfLines = 2
+//    dealerCard6.numberOfLines = 2
+//    
+//    playerCard1.numberOfLines = 2
+//    playerCard2.numberOfLines = 2
+//    playerCard3.numberOfLines = 2
+//    playerCard4.numberOfLines = 2
+//    playerCard5.numberOfLines = 2
+//    playerCard6.numberOfLines = 2
+  
     
     @IBOutlet weak var hitButton: UIButton!
     @IBOutlet weak var dealButton: UIButton!
@@ -81,19 +96,19 @@ class ViewController: UIViewController {
             playerHand = Hand()
             var pl1 = deckObj.dealCard()
             playerHand.appendCard(pl1)
-            playerCard1.text = pl1.simpleDescription()
+            playerCard1.text = pl1.simpleDescription() + "\n"
             
             var de1 = deckObj.dealCard()
             dealerHand.appendCard(de1)
-            dealerCard1.text = de1.simpleDescription()
+            dealerCard1.text = de1.simpleDescription() + "\n"
             
             var pl2 = deckObj.dealCard()
             playerHand.appendCard(pl2)
-            playerCard2.text = pl2.simpleDescription()
+            playerCard2.text = pl2.simpleDescription() + "\n"
             
             var de2 = deckObj.dealCard()
             dealerHand.appendCard(de2)
-            dealerCard2.text = "fold"
+            dealerCard2.text = "fold" + "\n"
 
             inPlay = true
             checkResult()
@@ -115,16 +130,20 @@ class ViewController: UIViewController {
         if inPlay && playerHand.getValue() < 21{
             var plCard = deckObj.dealCard()
             playerHand.appendCard(plCard)
-            var cardCount = playerHand.handArray.count
+            var cardCount = playerHand.handArray.count % 6
             switch cardCount {
+            case 1:
+                playerCard1.text = playerCard1.text! + plCard.simpleDescription() + "\n"
+            case 2:
+                playerCard2.text = playerCard2.text! + plCard.simpleDescription() + "\n"
             case 3:
-                playerCard3.text = plCard.simpleDescription()
+                playerCard3.text = playerCard3.text! + plCard.simpleDescription() + "\n"
             case 4:
-                playerCard4.text = plCard.simpleDescription()
+                playerCard4.text = playerCard4.text! + plCard.simpleDescription() + "\n"
             case 5:
-                playerCard5.text = plCard.simpleDescription()
-            case 6:
-                playerCard6.text = plCard.simpleDescription()
+                playerCard5.text = playerCard5.text! + plCard.simpleDescription() + "\n"
+            case 0:
+                playerCard6.text = playerCard6.text! + plCard.simpleDescription() + "\n"
             default:
                 break
                 
@@ -145,20 +164,25 @@ class ViewController: UIViewController {
         if inPlay{
             inPlay = false
             var currHand = dealerHand.handArray
-            dealerCard2.text = currHand[currHand.count - 1].simpleDescription()
+            dealerCard2.text = currHand[currHand.count - 1].simpleDescription() + "\n"
+            
             while dealerHand.getValue() < 17 {
                 var dlCard = deckObj.dealCard()
                 dealerHand.appendCard(dlCard)
-                var cardCount = dealerHand.handArray.count
+                var cardCount = dealerHand.handArray.count % 6
                 switch cardCount {
+                case 1:
+                    dealerCard1.text = dealerCard1.text! + dlCard.simpleDescription() + "\n"
+                case 2:
+                    dealerCard2.text = dealerCard2.text! + dlCard.simpleDescription() + "\n"
                 case 3:
-                    dealerCard3.text = dlCard.simpleDescription()
+                    dealerCard3.text = dealerCard3.text! + dlCard.simpleDescription() + "\n"
                 case 4:
-                    dealerCard4.text = dlCard.simpleDescription()
+                    dealerCard4.text = dealerCard4.text! + dlCard.simpleDescription() + "\n"
                 case 5:
-                    dealerCard5.text = dlCard.simpleDescription()
-                case 6:
-                    dealerCard6.text = dlCard.simpleDescription()
+                    dealerCard5.text = dealerCard5.text! + dlCard.simpleDescription() + "\n"
+                case 0:
+                    dealerCard6.text = dealerCard6.text! + dlCard.simpleDescription() + "\n"
                 default:
                     break
                     
@@ -294,7 +318,7 @@ class ViewController: UIViewController {
         }
         else if inPlay == true && (dealerHand.getValue() == 21 || playerHand.getValue() > 21) {
             var currHand = dealerHand.handArray
-            dealerCard2.text = currHand[currHand.count - 1].simpleDescription()
+            dealerCard2.text = currHand[currHand.count - 1].simpleDescription() + "\n"
             
             dealEnd("Sorry!You lose \(betValue) score!",value:-betValue)
             
