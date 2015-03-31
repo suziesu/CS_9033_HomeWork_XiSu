@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>2AA456C9-45D8-4670-8B88-387CCB7394FA</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Assignment1_backjack</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C8F6A42A94076C82901CB8426036152C9F37F228</key>
+		<string>https://github.com/suziesu/CS_9033_HomeWork_XiSu.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Assignment3_blackjack/Assignment1_backjack/Assignment1_backjack.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C8F6A42A94076C82901CB8426036152C9F37F228</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/suziesu/CS_9033_HomeWork_XiSu.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C8F6A42A94076C82901CB8426036152C9F37F228</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C8F6A42A94076C82901CB8426036152C9F37F228</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CS_9033_HomeWork_XiSu</string>
+		</dict>
+	</array>
+</dict>
+</plist>
